@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
@@ -7,8 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-def home(request):
-  return HttpResponse('<h1>Home Page</h1>')
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
+
+from main_app.models import RecommendationList
 
 def about(request):
   return render(request, 'about.html')
@@ -34,3 +35,12 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
+
+class RecommendationListCreate(CreateView):
+  model = RecommendationList
+  fields = ['name', 'description']
+  success_url = '/about/'
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
