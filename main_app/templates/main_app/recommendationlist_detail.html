@@ -19,8 +19,12 @@
     <p>{{recommendationlist.description}}</p>
     <h2>Podcasts</h2>
     {% if recommendationlist.podcasts.count %}
-      {% for podcast in ecommendationlist.podcasts %}
-        <h3>{{podcast.title}}</h3>
+      {% for podcast in recommendationlist.podcasts %}
+        <h3>
+          <a href="{% url 'podcasts_detail' podcast.id %}">
+            {{podcast.title}}
+          </a>
+        </h3>
       {% endfor %}
     {% else %}
       <h3>No podcasts have been added to this list yet...</h3>
