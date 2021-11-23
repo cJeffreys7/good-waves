@@ -1,6 +1,6 @@
 from django.urls import path
 
-from main_app.models import RecommendationList
+from main_app.models import RecommendationList, Podcast
 from . import views
 
 urlpatterns = [
@@ -9,5 +9,8 @@ urlpatterns = [
   path('accounts/signup/', views.signup, name='signup'),
   
   # recommendation list urls
-  path('recs/create/', views.RecommendationListCreate.as_view(), name='recs_create')
+  path('recs/create/', views.RecommendationListCreate.as_view(), name='recs_create'),
+
+  # podcast urls
+  path('podcasts/create/', views.PodcastCreate.as_view(), name='podcasts_create')
 ]
