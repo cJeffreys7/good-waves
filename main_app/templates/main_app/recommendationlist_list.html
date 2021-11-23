@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/recommendation-list-index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>All Recommendation Lists</h1>
+</section>
+
+<section class="card-container">
+  {% for rec in recommendationlist_list %}
+    <div class="card">
+      <div class="card-bg">
+      </div>
+      <a href="#">
+      {% comment %} {% url 'recs_detail' %} {% endcomment %}
+        <div class="card-content">
+          <h2>{{rec.name}}</h2>
+          <p>{{rec.description}}</p>
+          {% comment %} {% for podcast in rec.podcasts %}
+            <h3>{{podcast.title}}</h3>
+          {% endfor %} {% endcomment %}
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}

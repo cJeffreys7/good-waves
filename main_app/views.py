@@ -36,6 +36,9 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
 
+class RecommendationListList(ListView):
+  model = RecommendationList
+
 class RecommendationListCreate(CreateView):
   model = RecommendationList
   fields = ['name', 'description']

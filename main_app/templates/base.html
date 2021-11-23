@@ -29,6 +29,7 @@
     <nav>
       <ul>
         {% if user.is_authenticated %}
+          <li><a href="{% url 'recs_index' %}">View Recommendations List</a></li>
           <li><a href="{% url 'recs_create' %}">Create a Recommendations List</a></li>
           <li><a href="{% url 'podcasts_create' %}">Create a Podcast</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
