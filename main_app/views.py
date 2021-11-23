@@ -48,6 +48,9 @@ class RecommendationListCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
+class RecommendationListDetail(DetailView):
+  model = RecommendationList
+
 class PodcastCreate(CreateView):
   model = Podcast
   fields = ['title', 'description', 'category', 'link']

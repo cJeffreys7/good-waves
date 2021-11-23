@@ -16,8 +16,7 @@
     <div class="card">
       <div class="card-bg">
       </div>
-      <a href="#">
-      {% comment %} {% url 'recs_detail' %} {% endcomment %}
+      <a href="{% url 'recs_detail' rec.id %}">
         <div class="card-content">
           <h2>{{rec.name}}</h2>
           <p>{{rec.description}}</p>
