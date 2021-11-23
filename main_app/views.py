@@ -42,7 +42,7 @@ class RecommendationListList(ListView):
 class RecommendationListCreate(CreateView):
   model = RecommendationList
   fields = ['name', 'description']
-  success_url = '/about/'
+  success_url = '/recs/'
 
   def form_valid(self, form):
     form.instance.user = self.request.user
@@ -55,6 +55,9 @@ class RecommendationListUpdate(UpdateView):
   model = RecommendationList
   fields = ['name', 'description']
   
+class RecommendationListDelete(DeleteView):
+  model = RecommendationList
+  success_url = '/recs/'
 
 class PodcastCreate(CreateView):
   model = Podcast

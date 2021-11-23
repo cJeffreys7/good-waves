@@ -13,6 +13,7 @@ urlpatterns = [
   path('recs/create/', views.RecommendationListCreate.as_view(), name='recs_create'),
   path('recs/<int:pk>/', views.RecommendationListDetail.as_view(), name='recs_detail'),
   path('recs/<int:pk>/update/', views.RecommendationListUpdate.as_view(), name='recs_update'),
+  path('recs/<int:pk>/delete/', views.RecommendationListDelete.as_view(), name='recs_delete'),
 
   # podcast urls
   path('podcasts/create/', views.PodcastCreate.as_view(), name='podcasts_create')

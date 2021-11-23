@@ -53,4 +53,3 @@ class RecommendationList(models.Model):
 
   def get_absolute_url(self):
       return reverse("recs_detail", kwargs={'pk': self.id})
-  
