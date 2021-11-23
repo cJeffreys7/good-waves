@@ -11,6 +11,8 @@
 * Django
 * PostgreSQL
 * JavaScript
+* HTML
+* CSS
 
 ## Wireframe
 
