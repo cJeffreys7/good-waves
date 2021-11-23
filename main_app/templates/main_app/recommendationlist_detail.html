@@ -27,8 +27,7 @@
     {% endif %}
   </div>
 </div>
-<a href="#" class="btn warn">Edit</a> 
-{% comment %} {% url 'recs_update' recommendationlist.id %} {% endcomment %}
+<a href="{% url 'recs_update' recommendationlist.id %}" class="btn warn">Edit</a> 
 <a href="#" class="btn danger">Delete</a>
 {% comment %} {% url 'recs_delete' recommendationlist.id %} {% endcomment %}
 

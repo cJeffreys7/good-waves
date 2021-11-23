@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.fields.related import ManyToManyField
+from django.urls import reverse
 
 CATEGORIES = (
   ('H', 'History'),
@@ -49,3 +50,7 @@ class RecommendationList(models.Model):
 
   def __str__(self):
     return self.name
+
+  def get_absolute_url(self):
+      return reverse("recs_detail", kwargs={'pk': self.id})
+  

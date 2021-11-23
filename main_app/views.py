@@ -51,6 +51,11 @@ class RecommendationListCreate(CreateView):
 class RecommendationListDetail(DetailView):
   model = RecommendationList
 
+class RecommendationListUpdate(UpdateView):
+  model = RecommendationList
+  fields = ['name', 'description']
+  
+
 class PodcastCreate(CreateView):
   model = Podcast
   fields = ['title', 'description', 'category', 'link']
