@@ -59,6 +59,9 @@ class RecommendationListDelete(DeleteView):
   model = RecommendationList
   success_url = '/recs/'
 
+class PodcastList(ListView):
+  model = Podcast
+
 class PodcastCreate(CreateView):
   model = Podcast
   fields = ['title', 'description', 'category', 'link']

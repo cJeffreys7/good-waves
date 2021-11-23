@@ -16,5 +16,6 @@ urlpatterns = [
   path('recs/<int:pk>/delete/', views.RecommendationListDelete.as_view(), name='recs_delete'),
 
   # podcast urls
+  path('podcasts/', views.PodcastList.as_view(), name='podcasts_index'),
   path('podcasts/create/', views.PodcastCreate.as_view(), name='podcasts_create')
 ]

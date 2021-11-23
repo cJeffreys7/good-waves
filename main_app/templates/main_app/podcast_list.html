@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/podcast-index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>All Podcasts</h1>
+</section>
+
+<section class="card-container">
+  {% for podcast in podcast_list %}
+    <div class="card">
+      <div class="card-bg">
+      </div>
+      <a href="#">
+      {% comment %} {% url 'podcasts_detail' podcast.id %} {% endcomment %}
+        <div class="card-content">
+          <h2>{{podcast.title}}</h2>
+          <h4>{{podcast.get_category_display}}</h3>
+          <p>{{podcast.description}}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}
