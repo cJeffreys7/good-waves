@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.fields import TextField
 from django.db.models.fields.related import ManyToManyField
 from django.urls import reverse
 
@@ -42,10 +43,19 @@ class Podcast(models.Model):
   def __str__(self):
     return self.title
 
+class Review(models.Model):
+  rating = models.IntegerField()
+  text = models.TextField(max_length=500)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  podcast = models.ForeignKey(Podcast, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.user.username}'s review of {self.podcast.title}"
+
 class RecommendationList(models.Model):
   name = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
-  podcasts = ManyToManyField(Podcast)
+  podcasts = models.ManyToManyField(Podcast)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):

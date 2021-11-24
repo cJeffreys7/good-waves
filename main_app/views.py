@@ -10,6 +10,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
 from main_app.models import RecommendationList, Podcast
+from .forms import ReviewForm
 
 def about(request):
   return render(request, 'about.html')
@@ -71,5 +72,19 @@ class PodcastCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class PodcastDetail(DetailView):
-  model = Podcast
+# class PodcastDetail(DetailView):
+#   model = Podcast
+
+def podcasts_detail(request, podcast_id):
+  podcast = Podcast.objects.get(id=podcast_id)
+  review_form = ReviewForm()
+  return render(request, 'podcasts/detail.html', {'podcast': podcast, 'review_form': review_form})
+
+def add_review(request, podcast_id):
+  form = ReviewForm(request.POST)
+  if form.is_valid():
+    new_review = form.save(commit=False)
+    new_review.podcast_id = podcast_id
+    new_review.user = request.user
+    new_review.save()
+  return redirect('podcasts_detail', podcast_id=podcast_id)

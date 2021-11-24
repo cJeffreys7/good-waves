@@ -1,4 +1,4 @@
-{% comment %} {% extends 'base.html' %} 
+{% extends 'base.html' %} 
 {% load static %} 
 
 {% block head %}
@@ -26,7 +26,6 @@
         {{review_form.as_p}}
         <button type="submit" class="btn submit">Add Review</button>
       </form>
-      <h3>User Reviews</h3>
       {% if podcast.review_set.all.count %}
         {% for review in podcast.review_set.all %}
           <h4>{{review.user.username}}</h4>
@@ -39,7 +38,7 @@
     </section>
   </div>
 </div>
-{% comment %} <a href="{% url 'podcasts_update' podcast.id %}" class="btn warn">Edit</a>  {% endcomment %}
-{% comment %} <a href="{% url 'podcasts_delete' podcast.id %}" class="btn danger">Delete</a>
+{% comment %} <a href="{% url 'podcasts_update' podcast.id %}" class="btn warn">Edit</a> {% endcomment %}
+{% comment %} <a href="{% url 'podcasts_delete' podcast.id %}" class="btn danger">Delete</a> {% endcomment %}
 
-{% endblock %} {% endcomment %}
+{% endblock %}
