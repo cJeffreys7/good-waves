@@ -26,12 +26,11 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   min-height: 100vh;
-  --nav-bg: rgba(203, 94, 223, .7);
-  /* --nav-bg: rgba(104, 197, 248, .7); */
-  --nav-bg-ff: rgba(203, 94, 223, .7);
-  /* --nav-bg-ff: rgba(104, 197, 248, .9); */
-  --borders: rgb(81, 0, 105) solid 2px;
-  /* --borders: rgb(36, 116, 248) solid 2px; */
+  --logo-color: rgba(21, 116, 222, 1);
+  --logo-color-op: rgba(21, 116, 222, .5);
+  --nav-bg: rgba(167, 170, 189, .7);
+  --nav-bg-ff: rgba(167, 170, 189, .7);
+  --borders: rgb(66, 70, 86) solid 2px;
   --text-color: rgb(17, 20, 17);
   --link-hover-color: rgb(16, 56, 158);
   --button-bg: rgb(245, 245, 245);
@@ -53,6 +52,10 @@ header {
   width: 100%;
   background: var(--nav-bg-ff);
   border-bottom: var(--borders);
+}
+
+.logo-img {
+  width: 10%;
 }
 
 nav {
@@ -98,7 +101,7 @@ nav li {
 .header-logo-container {
   margin: auto;
   padding: 10px 20px 0;
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
 .page-header {
@@ -126,8 +129,14 @@ nav li {
 }
 
 .submit {
-  color: var(--submit);
-  border-color: var(--submit);
+  font-size: var(--font-xl);
+  color: white;
+  border-color: var(--logo-color);
+  background-color: var(--logo-color-op);
+  height: 64px;
+  border-radius: 32px;
+  width: 100%;
+  margin-top: 64px !important;
 }
 
 .secondary {
@@ -179,10 +188,10 @@ nav li {
     padding: 0 15px;
   }
 
-  /* visual fix to help align logo */
-  .header-logo-container {
-    padding-top: 3px;
+  .logo-img {
+    width: 40%;
   }
+  
 
   nav {
     margin-left: auto;
@@ -242,15 +251,27 @@ nav li {
     border-radius: 18px;
   }
 
-  nav {
-    margin-left: auto;
+  .header-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
   }
 
-  .header-logo-container {
-    /* visual fix to help align logo */
-    padding-top: 6px;
-    width: 256px;
-    height: 35px;
+  .header-logo-container > a {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: 40px;
+  }
+
+  .logo-img {
+    width: 100%;
+  }
+  
+
+  nav {
+    margin-left: auto;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -261,7 +282,7 @@ nav li {
 
     nav,
     .header-logo-container {
-      background: rgba(203, 94, 223, .6);
+      background: rgba(167, 170, 189, .6);
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
     }

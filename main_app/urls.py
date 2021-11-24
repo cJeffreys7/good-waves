@@ -1,9 +1,11 @@
 from django.urls import path
 
+from main_app.forms import CustomAuthForm
+
 from . import views
 
 urlpatterns = [
-  path('', views.Home.as_view(), name='home'),
+  path('', views.Home.as_view(authentication_form=CustomAuthForm), name='home'),
   path('about/', views.about, name='about'),
   path('accounts/signup/', views.signup, name='signup'),
   

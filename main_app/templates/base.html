@@ -9,7 +9,7 @@
   <link
     rel="shortcut icon"
     type="image/png"
-    href=""
+    href="{% static 'images/goodwaves-icon.svg' %}"
   >
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   <title>Good Waves</title>
@@ -21,7 +21,8 @@
     <div class="header-logo-container">
       <a href="/">
         <img 
-          src="" 
+          class='logo-img'
+          src="{% static 'images/goodwaves-icon.svg' %}" 
           alt="The Good Waves Logo"
         >
       </a>
@@ -35,10 +36,10 @@
           <li><a href="{% url 'podcasts_create' %}">Create a Podcast</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'logout' %}">Log out</a></li>
-        {% else %}
+        {% comment %} {% else %}
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'home' %}">Login</a></li>
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li> {% endcomment %}
         {% endif %}
       </ul>
     </nav>
