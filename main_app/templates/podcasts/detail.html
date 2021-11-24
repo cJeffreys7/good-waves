@@ -38,7 +38,7 @@
           {% if user == review.user %}
             <div class="review-actions">
               <a href="{% url 'reviews_update' review.id %}" class="btn warn">Edit</a>
-              {% comment %} <a href="{% url 'reviews_delete' review.id %}" class="btn danger">Delete</a> {% endcomment %}
+              <a href="{% url 'reviews_delete' review.id %}" class="btn danger">Delete</a>
             </div>
           {% endif %}
         {% endfor %}

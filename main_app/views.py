@@ -97,3 +97,7 @@ class PodcastDelete(DeleteView):
 class ReviewUpdate(UpdateView):
   model = Review
   fields = ['rating', 'text']
+
+class ReviewDelete(DeleteView):
+  model = Review
+  success_url = '/podcasts/'

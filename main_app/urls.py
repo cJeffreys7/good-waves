@@ -23,5 +23,6 @@ urlpatterns = [
   path('podcasts/<int:pk>/delete/', views.PodcastDelete.as_view(), name='podcasts_delete'),
 
   # review urls
-  path('reviews/<int:pk>/update/', views.ReviewUpdate.as_view(), name='reviews_update')
+  path('reviews/<int:pk>/update/', views.ReviewUpdate.as_view(), name='reviews_update'),
+  path('reviews/<int:pk>/delete/', views.ReviewDelete.as_view(), name='reviews_delete')
 ]
