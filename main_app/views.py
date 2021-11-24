@@ -89,3 +89,7 @@ def add_review(request, podcast_id):
 class PodcastUpdate(UpdateView):
   model = Podcast
   fields = ['title', 'description', 'category', 'link']
+
+class PodcastDelete(DeleteView):
+  model = Podcast
+  success_url = '/podcasts/'

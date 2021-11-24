@@ -20,7 +20,7 @@
     <p>{{podcast.description}}</p>
     <div class="podcast-actions">
       <a href="{% url 'podcasts_update' podcast.id %}" class="btn warn">Edit</a>
-      {% comment %} <a href="{% url 'podcasts_delete' podcast.id %}" class="btn danger">Delete</a> {% endcomment %}
+      <a href="{% url 'podcasts_delete' podcast.id %}" class="btn danger">Delete</a>
     </div>
     <section class="reviews">
       <h2>Reviews</h2>
