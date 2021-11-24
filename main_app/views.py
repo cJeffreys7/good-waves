@@ -72,9 +72,6 @@ class PodcastCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-# class PodcastDetail(DetailView):
-#   model = Podcast
-
 def podcasts_detail(request, podcast_id):
   podcast = Podcast.objects.get(id=podcast_id)
   review_form = ReviewForm()
@@ -88,3 +85,7 @@ def add_review(request, podcast_id):
     new_review.user = request.user
     new_review.save()
   return redirect('podcasts_detail', podcast_id=podcast_id)
+
+class PodcastUpdate(UpdateView):
+  model = Podcast
+  fields = ['title', 'description', 'category', 'link']

@@ -43,6 +43,9 @@ class Podcast(models.Model):
   def __str__(self):
     return self.title
 
+  def get_absolute_url(self):
+      return reverse("podcasts_detail", kwargs={'podcast_id': self.id})
+
 class Review(models.Model):
   rating = models.IntegerField()
   text = models.TextField(max_length=500)

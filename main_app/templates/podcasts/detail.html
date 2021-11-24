@@ -18,6 +18,10 @@
     <h2>{{podcast.title}}</h2>
     <h4>{{podcast.get_category_display}}</h4>
     <p>{{podcast.description}}</p>
+    <div class="podcast-actions">
+      <a href="{% url 'podcasts_update' podcast.id %}" class="btn warn">Edit</a>
+      {% comment %} <a href="{% url 'podcasts_delete' podcast.id %}" class="btn danger">Delete</a> {% endcomment %}
+    </div>
     <section class="reviews">
       <h2>Reviews</h2>
       <h3>Add a Reviews</h3>
@@ -38,7 +42,5 @@
     </section>
   </div>
 </div>
-{% comment %} <a href="{% url 'podcasts_update' podcast.id %}" class="btn warn">Edit</a> {% endcomment %}
-{% comment %} <a href="{% url 'podcasts_delete' podcast.id %}" class="btn danger">Delete</a> {% endcomment %}
 
 {% endblock %}
