@@ -8,11 +8,13 @@
 {% block content %}
 
 <div class="sign-up-header">
-  <img
-    class="logo-img"
-    src="{% static 'images/goodwaves-icon.svg' %}"
-    alt="Soundwaves icon"
-  >
+  <a href="/" class="logo-link">
+    <img 
+      class='logo-img'
+      src="{% static 'images/goodwaves-icon.svg' %}" 
+      alt="The Good Waves Logo"
+    >
+  </a>
   <h1>GoodWaves</h1>
 </div>
 {% if error_message %}
