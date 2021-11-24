@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
-from main_app.models import RecommendationList, Podcast
+from main_app.models import RecommendationList, Podcast, Review
 from .forms import ReviewForm
 
 def about(request):
@@ -93,3 +93,7 @@ class PodcastUpdate(UpdateView):
 class PodcastDelete(DeleteView):
   model = Podcast
   success_url = '/podcasts/'
+
+class ReviewUpdate(UpdateView):
+  model = Review
+  fields = ['rating', 'text']

@@ -55,6 +55,9 @@ class Review(models.Model):
   def __str__(self):
     return f"{self.user.username}'s review of {self.podcast.title}"
 
+  def get_absolute_url(self):
+    return reverse("podcasts_detail", kwargs={'podcast_id': self.podcast.id})
+
 class RecommendationList(models.Model):
   name = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
