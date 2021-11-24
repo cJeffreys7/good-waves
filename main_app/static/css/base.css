@@ -70,6 +70,10 @@ ul {
 
 main {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h2 {
@@ -129,6 +133,8 @@ nav li {
 }
 
 .submit {
+  display: flex;
+  justify-content: center;
   font-size: var(--font-xl);
   color: white;
   border-color: var(--logo-color);
