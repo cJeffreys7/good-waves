@@ -55,7 +55,8 @@ header {
 }
 
 .logo-img {
-  width: 10%;
+  width: 40%;
+  min-width: 48px;
 }
 
 nav {
@@ -66,6 +67,22 @@ ul {
   margin: 0;
   list-style: none;
   padding: 0;
+}
+
+.nav-icon {
+  filter: invert(39%) sepia(5%) saturate(33%) hue-rotate(314deg) brightness(92%) contrast(90%);
+}
+
+.active-icon {
+  filter: invert(32%) sepia(93%) saturate(1675%) hue-rotate(198deg) brightness(90%) contrast(92%);
+}
+
+.small-icon {
+  height: 48px;
+}
+
+.large-icon {
+  height: 45px;
 }
 
 main {
@@ -105,7 +122,6 @@ nav li {
 .header-logo-container {
   margin: auto;
   padding: 10px 20px 0;
-  /* max-width: 500px; */
 }
 
 .page-header {
@@ -174,7 +190,7 @@ nav li {
   margin-left: 20px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 400px) {
   header {
     position: sticky;
     display: flex;
@@ -185,7 +201,6 @@ nav li {
 
   main {
     max-width: 1300px;
-    min-height: calc(100vh - 53px);
   }
 
   nav,
@@ -195,7 +210,7 @@ nav li {
   }
 
   .logo-img {
-    width: 40%;
+    min-width: 48px;
   }
   
 

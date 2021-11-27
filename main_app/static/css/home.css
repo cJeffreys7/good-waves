@@ -61,10 +61,12 @@ h1 {
   padding: 2px 32px;
   height: 64px;
   border-radius: 32px;
+  outline: none;
 }
 
 .login .btn {
-  align-self: flex-end;
+  display: flex;
+  align-items: center;
   margin-right: 0;
   margin-top: 16px;
 }
