@@ -4,6 +4,7 @@
 }
 
 .form-title {
+  color: var(--text-lite-color);
   margin-bottom: 0;
 }
 
@@ -73,7 +74,7 @@ tbody > tr:nth-child(2) > th > label:after {
   visibility: visible;
   display: block;
   font-size: var(--font-xl);
-  color: var(--text-lite-color);
+  color: var(--text-lighter-color);
 }
 
 tbody > tr:nth-child(3) > th > label {
@@ -85,7 +86,7 @@ tbody > tr:nth-child(3) > th > label:after {
   visibility: visible;
   display: block;
   font-size: var(--font-xl);
-  color: var(--text-lite-color);
+  color: var(--text-lighter-color);
 }
 
 tbody > tr:nth-child(4) > th > label {
@@ -97,20 +98,20 @@ tbody > tr:nth-child(4) > th > label:after {
   visibility: visible;
   display: block;
   font-size: var(--font-xl);
-  color: var(--text-lite-color);
+  color: var(--text-lighter-color);
 }
 
 #id_name, #id_title {
   border: none;
   border-bottom: gray solid 2px;
   font-size: var(--font-xxl);
-  color: var(--text-lite-color);
+  color: var(--text-lighter-color);
 }
 
 #id_description {
   resize: none;
   font-size: var(--font-xl);
-  color: var(--text-lite-color);
+  color: var(--text-lighter-color);
   padding: 12px;
   height: 8.5em;
 }
@@ -118,5 +119,5 @@ tbody > tr:nth-child(4) > th > label:after {
 input, select {
   min-height: 48px;
   font-size: var(--font-xl);
-  color: var(--text-lite-color);
+  color: var(--text-lighter-color);
 }

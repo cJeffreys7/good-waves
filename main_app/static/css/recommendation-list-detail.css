@@ -1,0 +1,29 @@
+section {
+  width: 80%;
+}
+
+.list-title {
+  color: var(--text-lite-color);
+  font-size: var(--font-xxl);
+  padding-bottom: 8px;
+  border-bottom: var(--text-lighter-color) solid 2px;
+}
+
+p {
+  font-size: var(--font-l);
+}
+
+.items-title {
+  color: var(--text-lite-color);
+  font-size: var(--font-xxl);
+}
+
+.items-content {
+  margin-top: 32px;
+  border-top: var(--text-lighter-color) solid 2px;
+}
+
+.no-items-message {
+  font-size: var(--font-l);
+  color: var(--danger-op);
+}

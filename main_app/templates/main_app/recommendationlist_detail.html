@@ -11,13 +11,15 @@
 
 {% block content %}
   
-<div class="card">
-  <div class="card-bg">
-  </div>
-  <div class="card-content">
-    <h2>{{recommendationlist.name}}</h2>
+<section>
+  <div class="list-content">
+    <h1 class="list-title">{{recommendationlist.name}}</h1>
     <p>{{recommendationlist.description}}</p>
-    <h2>Podcasts</h2>
+    <a href="{% url 'recs_update' recommendationlist.id %}" class="btn secondary">Edit</a> 
+    <a href="{% url 'recs_delete' recommendationlist.id %}" class="btn danger">Delete</a>
+  </div>
+  <div class="items-content">
+    <h1 class="items-title">Podcasts</h1>
     {% if recommendationlist.podcasts.count %}
       {% for podcast in recommendationlist.podcasts %}
         <h3>
@@ -27,11 +29,9 @@
         </h3>
       {% endfor %}
     {% else %}
-      <h3>No podcasts have been added to this list yet...</h3>
+      <h3 class="no-items-message">{{recommendationlist.name}} does not have any podcasts</h3>
     {% endif %}
   </div>
-</div>
-<a href="{% url 'recs_update' recommendationlist.id %}" class="btn warn">Edit</a> 
-<a href="{% url 'recs_delete' recommendationlist.id %}" class="btn danger">Delete</a>
+</section>
 
 {% endblock %}
