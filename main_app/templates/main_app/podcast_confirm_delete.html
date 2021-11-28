@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/form-delete.css' %}"
+/>
+{% endblock %}
+
 {% block content %}
 
 <div class="page-header">
   <h1>Delete Podcast</h1>
+  <h3>{{object.title}}</h3>
 </div>
-<h2>Are you sure you want to delete {{ object.title }}?</h2>
+<p>Are you sure you want to delete {{ object.title }}?</p>
 
 <form action="" method="post">
   {% csrf_token %}
-  <a href="{% url 'podcasts_detail' podcast.id %}" class="btn secondary">
+  <a href="{% url 'podcasts_detail' podcast.id %}" class="btn cancel">
     Cancel
   </a>
   <button type="submit" class="btn danger">
