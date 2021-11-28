@@ -18,10 +18,12 @@
     <h1 class="card-title">{{podcast.title}}</h1>
     <h4 class="card-category">{{podcast.get_category_display}}</h4>
     <p>{{podcast.description}}</p>
-    <div class="podcast-actions">
-      <a href="{% url 'podcasts_update' podcast.id %}" class="btn secondary">Edit</a>
-      <a href="{% url 'podcasts_delete' podcast.id %}" class="btn danger">Delete</a>
-    </div>
+    {% if user == podcast.user %}
+      <div class="podcast-actions">
+        <a href="{% url 'podcasts_update' podcast.id %}" class="btn secondary">Edit</a>
+        <a href="{% url 'podcasts_delete' podcast.id %}" class="btn danger">Delete</a>
+      </div>
+    {% endif %}
     <section class="items-content">
       <h1 class="items-title">Reviews</h1>
       <h3>Add a Review</h3>
