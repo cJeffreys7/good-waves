@@ -1,5 +1,5 @@
 section {
-  width: 80%;
+  width: 100%;
 }
 
 .list-title {
@@ -26,4 +26,32 @@ p {
 .no-items-message {
   font-size: var(--font-l);
   color: var(--danger-op);
+}
+
+a {
+  text-decoration: none;
+}
+
+.podcast-title {
+  color: var(--logo-color);
+  font-size: var(--font-l);
+  width: 50%;
+}
+
+.podcast-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.podcast-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit {
+  margin-top: 0 !important;
+  width: 100%;
+  height: 48px;
 }

@@ -56,6 +56,10 @@ def assoc_podcast(request, rec_id, podcast_id):
   RecommendationList.objects.get(id=rec_id).podcasts.add(podcast_id)
   return redirect('recs_detail', rec_id=rec_id)
 
+def unassoc_podcast(request, rec_id, podcast_id):
+  RecommendationList.objects.get(id=rec_id).podcasts.remove(podcast_id)
+  return redirect('recs_detail', rec_id=rec_id)
+
 class RecommendationListUpdate(UpdateView):
   model = RecommendationList
   fields = ['name', 'description']

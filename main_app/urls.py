@@ -14,6 +14,7 @@ urlpatterns = [
   path('recs/create/', views.RecommendationListCreate.as_view(), name='recs_create'),
   path('recs/<int:rec_id>/', views.recs_detail, name='recs_detail'),
   path('recs/<int:rec_id>/assoc_podcast/<int:podcast_id>/', views.assoc_podcast, name='assoc_podcast'),
+  path('recs/<int:rec_id>/unassoc_podcast/<int:podcast_id>/', views.unassoc_podcast, name='unassoc_podcast'),
   path('recs/<int:pk>/update/', views.RecommendationListUpdate.as_view(), name='recs_update'),
   path('recs/<int:pk>/delete/', views.RecommendationListDelete.as_view(), name='recs_delete'),
 

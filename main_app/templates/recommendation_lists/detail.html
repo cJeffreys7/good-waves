@@ -15,33 +15,45 @@
   <div class="list-content">
     <h1 class="list-title">{{recommendation_list.name}}</h1>
     <p>{{recommendation_list.description}}</p>
-    <a href="{% url 'recs_update' recommendation_list.id %}" class="btn secondary">Edit</a> 
-    <a href="{% url 'recs_delete' recommendation_list.id %}" class="btn danger">Delete</a>
+    {% if user == recommendation_list.user %}
+      <a href="{% url 'recs_update' recommendation_list.id %}" class="btn secondary">Edit</a> 
+      <a href="{% url 'recs_delete' recommendation_list.id %}" class="btn danger">Delete</a>
+    {% endif %}
   </div>
   <div class="items-content">
     <h1 class="items-title">Podcasts</h1>
     {% if recommendation_list.podcasts.count %}
       {% for podcast in recommendation_list.podcasts.all %}
-        <h3>
-          <a href="{% url 'podcasts_detail' podcast.id %}">
-            {{podcast.title}}
-          </a>
-        </h3>
+        <div class="podcast-info">
+          <h3>
+            <a class="podcast-title" href="{% url 'podcasts_detail' podcast.id %}">
+              {{podcast.title}}
+            </a>
+          </h3>
+          {% if user == recommendation_list.user %}
+            <form action="{% url 'unassoc_podcast' recommendation_list.id podcast.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn danger">Remove</button>
+            </form>
+          {% endif %}
+        </div>
       {% endfor %}
     {% else %}
       <h3 class="no-items-message">{{recommendation_list.name}} does not have any podcasts</h3>
     {% endif %}
-    <h3>Unassigned Podcasts</h3>
-    {% if podcasts.count %}
-      {% for podcast in podcasts.all %}
-        <div class="podcast-container">
-          <h4>{{podcast.title}}</h4>
-          <form action="{% url 'assoc_podcast' recommendation_list.id podcast.id %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn submit">Assign Podcast</button>
-          </form>
-        </div>
-      {% endfor %}
+    {% if user == recommendation_list.user %}
+      {% if podcasts.count %}
+        <h3>Unassigned Podcasts</h3>
+        {% for podcast in podcasts.all %}
+          <div class="podcast-container">
+            <h4 class="podcast-title">{{podcast.title}}</h4>
+            <form action="{% url 'assoc_podcast' recommendation_list.id podcast.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn submit">Assign Podcast</button>
+            </form>
+          </div>
+        {% endfor %}
+      {% endif %}
     {% endif %}
   </div>
 </section>
