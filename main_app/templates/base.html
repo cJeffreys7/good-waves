@@ -20,21 +20,19 @@
 <body>
   <header>
     <div class="header-logo-container">
-      <a href="/">
-        <img 
-          class='logo-img'
-          src="{% static 'images/goodwaves-icon.svg' %}" 
-          alt="The Good Waves Logo"
-        >
-      </a>
+      <img 
+        class='logo-img'
+        src="{% static 'images/goodwaves-icon.svg' %}" 
+        alt="The Good Waves Logo"
+      >
     </div>
     {% if user.is_authenticated %}
       <nav>
         <ul>
-            <li><a href="{% url 'recs_create' %}"><img id="/recs/create/" class="nav-icon small-icon" src="{% static 'images/list-icon-add.svg' %}" alt="List icon with a plus circle"></a></li>
             <li><a href="{% url 'recs_index' %}"><img id="/recs/" class="nav-icon large-icon" src="{% static 'images/list-icon.svg' %}" alt="List icon"></a></li>
-            <li><a href="{% url 'podcasts_create' %}"><img id="/podcasts/create/" class="nav-icon small-icon" src="{% static 'images/podcast-icon-add.svg' %}" alt="Podcast icon with a plus circle"></a></li>
+            <li><a href="{% url 'recs_create' %}"><img id="/recs/create/" class="nav-icon small-icon" src="{% static 'images/list-icon-add.svg' %}" alt="List icon with a plus circle"></a></li>
             <li><a href="{% url 'podcasts_index' %}"><img id="/podcasts/" class="nav-icon large-icon" src="{% static 'images/podcast-icon.svg' %}" alt="Podcast icon"></a></li>
+            <li><a href="{% url 'podcasts_create' %}"><img id="/podcasts/create/" class="nav-icon small-icon" src="{% static 'images/podcast-icon-add.svg' %}" alt="Podcast icon with a plus circle"></a></li>
             <li><a href="{% url 'logout' %}"><img class="nav-icon small-icon" src="{% static 'images/sign-out-icon.svg' %}" alt="Exit icon with an arrow"></a></li>
         </ul>
       </nav>
