@@ -4,7 +4,7 @@
   "avatar content";
   grid-template-columns: 32px 1fr;
   border: gray solid 2px;
-  width: 80%;
+  width: 100%;
   margin: 12px;
   padding: 0 12px 0;
 }

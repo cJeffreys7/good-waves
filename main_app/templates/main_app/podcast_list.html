@@ -3,24 +3,30 @@
 
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/podcast-index.css' %}">
+<script src="https://kit.fontawesome.com/73eb34af13.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block content %}
 
 <section class="page-header">
-  <h1>All Podcasts</h1>
+  <h1>Podcasts</h1>
 </section>
 
 <section class="card-container">
   {% for podcast in podcast_list %}
     <div class="card">
-      <div class="card-bg">
-      </div>
       <a href="{% url 'podcasts_detail' podcast.id %}">
         <div class="card-content">
-          <h2>{{podcast.title}}</h2>
-          <h4>{{podcast.get_category_display}}</h3>
+          <h2 class="card-title">{{podcast.title}}</h2>
+          <h4 class="card-category">{{podcast.get_category_display}}</h3>
           <p>{{podcast.description}}</p>
+          <div class="avg-rating">
+            <div id="rating-1"><i class="fas fa-star"></i></div>
+            <div id="rating-2"><i class="fas fa-star"></i></div>
+            <div id="rating-3"><i class="fas fa-star"></i></div>
+            <div id="rating-4"><i class="fas fa-star"></i></div>
+            <div id="rating-5"><i class="fas fa-star"></i></div>
+          </div>
         </div>
       </a>
     </div>

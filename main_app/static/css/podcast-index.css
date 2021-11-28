@@ -1,0 +1,33 @@
+.page-header {
+  padding-bottom: 8px;
+  border-bottom: var(--text-lighter-color) solid 2px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-title {
+  color: var(--logo-color);
+}
+
+.card-category {
+  color: var(--text-lighter-color);
+  font-size: var(--font-reg);
+  font-weight: 400;
+}
+
+p {
+  color: var(--text-lighter-color);
+  font-size: var(--font-reg);
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.avg-rating {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  font-size: 5rem;
+  color: var(--star-fill);
+}

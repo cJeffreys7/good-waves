@@ -40,6 +40,7 @@ body {
   --submit: rgb(26, 128, 0);
   --danger: rgb(218, 68, 76);
   --danger-op: rgba(218, 68, 76, .5);
+  --star-fill: rgb(255, 204, 0);
   --card-box-shadow: 5px 5px 6px -1px #AAA;
   --font-xtreme: 4.2rem;
   --font-xxl: 3.6rem;
@@ -202,7 +203,18 @@ nav li {
   }
 
   main {
-    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+  }
+  
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 16px 0 16px;
   }
 
   nav,
@@ -231,7 +243,10 @@ nav li {
   }
 
   .page-header h1 {
-    font-size: var(--font-xtreme);
+    font-size: var(--font-xxl);
+    color: var(--text-lite-color);
+    margin-bottom: 0;
+    font-weight: 500;
   }
   
   .page-header img {

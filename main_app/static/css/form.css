@@ -3,17 +3,11 @@
   margin-bottom: 16px;
 }
 
-.form-title {
-  color: var(--text-lite-color);
-  margin-bottom: 0;
-  font-weight: 500;
-}
-
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 100%;
 }
 
 table {
