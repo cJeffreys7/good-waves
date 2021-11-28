@@ -72,18 +72,51 @@ tbody > tr:nth-child(2) > th > label:after {
   content: "Description";
   visibility: visible;
   display: block;
-  font-size: var(--font-xl)
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
 }
 
-#id_name {
+tbody > tr:nth-child(3) > th > label {
+  visibility: hidden;
+}
+
+tbody > tr:nth-child(3) > th > label:after {
+  content: "Category";
+  visibility: visible;
+  display: block;
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
+}
+
+tbody > tr:nth-child(4) > th > label {
+  visibility: hidden;
+}
+
+tbody > tr:nth-child(4) > th > label:after {
+  content: "Link";
+  visibility: visible;
+  display: block;
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
+}
+
+#id_name, #id_title {
   border: none;
   border-bottom: gray solid 2px;
-  font-size: var(--font-xxl)
+  font-size: var(--font-xxl);
+  color: var(--text-lite-color);
 }
 
 #id_description {
   resize: none;
   font-size: var(--font-xl);
-  padding: 16px;
+  color: var(--text-lite-color);
+  padding: 12px;
   height: 8.5em;
+}
+
+input, select {
+  min-height: 48px;
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
 }
