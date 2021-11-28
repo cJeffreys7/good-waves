@@ -7,46 +7,61 @@
   type="text/css"
   href="{% static 'css/podcast-detail.css' %}"
 />
+<script src="https://kit.fontawesome.com/73eb34af13.js" crossorigin="anonymous"></script>
+<script defer src="{% static 'js/review-functions.js'%}"></script>
 {% endblock %}
 
 {% block content %}
   
-<div class="card">
-  <div class="card-bg">
-  </div>
+<section class="card">
   <div class="card-content">
-    <h2>{{podcast.title}}</h2>
-    <h4>{{podcast.get_category_display}}</h4>
+    <h1 class="card-title">{{podcast.title}}</h1>
+    <h4 class="card-category">{{podcast.get_category_display}}</h4>
     <p>{{podcast.description}}</p>
     <div class="podcast-actions">
-      <a href="{% url 'podcasts_update' podcast.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'podcasts_update' podcast.id %}" class="btn secondary">Edit</a>
       <a href="{% url 'podcasts_delete' podcast.id %}" class="btn danger">Delete</a>
     </div>
-    <section class="reviews">
-      <h2>Reviews</h2>
-      <h3>Add a Reviews</h3>
+    <section class="items-content">
+      <h1 class="items-title">Reviews</h1>
+      <h3>Add a Review</h3>
+      <div class="avg-rating">
+        <div class="rating-star"><i id="rating-1" class="fas fa-star"></i></div>
+        <div class="rating-star"><i id="rating-2" class="fas fa-star"></i></div>
+        <div class="rating-star"><i id="rating-3" class="fas fa-star"></i></div>
+        <div class="rating-star"><i id="rating-4" class="fas fa-star"></i></div>
+        <div class="rating-star"><i id="rating-5" class="fas fa-star"></i></div>
+      </div>
       <form action="{% url 'add_review' podcast.id %}" method="post">
         {% csrf_token %}
         {{review_form.as_p}}
         <button type="submit" class="btn submit">Add Review</button>
       </form>
+      <h1 class="items-title">User Reviews</h1>
       {% if podcast.review_set.all.count %}
         {% for review in podcast.review_set.all %}
-          <h4>{{review.user.username}}</h4>
-          <h4>Rating = {{review.rating}}</h4>
-          <h5>{{review.text}}</h5>
+          <h3 class="reviewer-name">{{review.user.first_name}}</h3>
+          <div class="review-rating">
+            <div id="review-rating-1" class="fill-star"><i class="fas fa-star"></i></div>
+            <div id="review-rating-2" class="{% if review.rating > 1 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+            <div id="review-rating-3" class="{% if review.rating > 2 %}fill-star {% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+            <div id="review-rating-4" class="{% if review.rating > 3 %}fill-star {% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+            <div id="review-rating-5" class="{% if review.rating > 4 %}fill-star {% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+          </div>
+          <h3>{{review.text}}</h3>
           {% if user == review.user %}
             <div class="review-actions">
-              <a href="{% url 'reviews_update' review.id %}" class="btn warn">Edit</a>
+              <a href="{% url 'reviews_update' review.id %}" class="btn secondary">Edit</a>
               <a href="{% url 'reviews_delete' review.id %}" class="btn danger">Delete</a>
             </div>
           {% endif %}
         {% endfor %}
       {% else %}
-        <h3>No reviews have been given to this podcast yet...</h3>
+        <h3 class="no-items-message">{{podcast.title}} does not have any reviews</h3>
       {% endif %}
     </section>
   </div>
-</div>
+  </div>
+</section>
 
 {% endblock %}

@@ -1,0 +1,84 @@
+.card {
+  width: 100%;
+}
+
+.card-title {
+  font-size: var(--font-xl);
+  color: var(--logo-color);
+  padding-bottom: 8px;
+  border-bottom: var(--text-lighter-color) solid 2px;
+}
+
+.card-category {
+  color: var(--text-lighter-color);
+  font-size: var(--font-reg);
+  font-weight: 400;
+}
+
+p {
+  color: var(--text-lighter-color);
+  font-size: var(--font-reg);
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.items-title {
+  color: var(--text-lite-color);
+  font-size: var(--font-xxl);
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.avg-rating, .review-rating {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  font-size: 5rem;
+}
+
+.fill-star, .avg-rating {
+  color: var(--star-fill);
+}
+
+.empty-star {
+  color: lightgray;
+}
+
+h3 {
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
+  font-weight: 500;
+}
+
+.reviewer-name {
+  font-size: var(--font-xxl);
+  margin: 24px 0 12px;
+}
+
+form > p:nth-child(2) {
+  display: none;
+}
+
+form > p:nth-child(3) > label {
+  display: none;
+}
+
+#id_text {
+  resize: none;
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
+  padding: 12px;
+  height: 8.5em;
+  width: 100%;
+}
+
+.submit {
+  margin-top: 8px !important;
+  width: fit-content !important;
+  height: 42px;
+}
+
+.no-items-message {
+  font-size: var(--font-l);
+  color: var(--danger-op);
+}
