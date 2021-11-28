@@ -2,20 +2,29 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/review-form.css' %}"/>
+<script src="https://kit.fontawesome.com/73eb34af13.js" crossorigin="anonymous"></script>
+<script defer src="{% static 'js/review-functions.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 
 <div class="page-header">
-    <h1>Edit {{object.name}}</h1>
+  <h1>Edit Review</h1>
+</div>
+<div class="review-rating">
+  <div class="rating-star fill-star"><i id="rating-1" class="fas fa-star"></i></div>
+  <div class="rating-star {% if object.rating > 1 %}fill-star{% else %}empty-star{% endif %}"><i id="rating-2" class="fas fa-star"></i></div>
+  <div class="rating-star {% if object.rating > 2 %}fill-star {% else %}empty-star{% endif %}"><i id="rating-3" class="fas fa-star"></i></div>
+  <div class="rating-star {% if object.rating > 3 %}fill-star {% else %}empty-star{% endif %}"><i id="rating-4" class="fas fa-star"></i></div>
+  <div class="rating-star {% if object.rating > 4 %}fill-star {% else %}empty-star{% endif %}"><i id="rating-5" class="fas fa-star"></i></div>
 </div>
 <form action="" method="post" class="form-container">
   {% csrf_token %}
   <table>
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit!</button>
+  <button type="submit" class="btn submit">Update</button>
 </form>
 
 {% endblock %}
