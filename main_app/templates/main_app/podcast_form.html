@@ -9,7 +9,7 @@
 
 <div class="page-header">
   {% if object %}
-    <h1>Edit {{object.name}}</h1>
+    <h1>Edit Podcast</h1>
   {% else %}
     <h1>New Podcast</h1>
   {% endif %}
@@ -19,7 +19,7 @@
   <table>
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit</button>
+  <button type="submit" class="btn submit">{% if object %}Update{% else %}Submit{% endif %}</button>
 </form>
 
 {% endblock %}
