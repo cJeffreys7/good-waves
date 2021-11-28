@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.fields import TextField
-from django.db.models.fields.related import ManyToManyField
 from django.urls import reverse
 
 CATEGORIES = (

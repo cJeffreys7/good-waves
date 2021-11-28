@@ -46,6 +46,16 @@ class RecommendationListCreate(CreateView):
 class RecommendationListDetail(DetailView):
   model = RecommendationList
 
+def recs_detail(request, rec_id):
+  recommendation_list = RecommendationList.objects.get(id=rec_id)
+  podcasts_not_in_list = Podcast.objects.filter(user=request.user).exclude(id__in = recommendation_list.podcasts.all().values_list('id'))
+  #filter(user=request.user)
+  return render(request, 'recommendation_lists/detail.html', {'recommendation_list': recommendation_list, 'podcasts': podcasts_not_in_list})
+
+def assoc_podcast(request, rec_id, podcast_id):
+  RecommendationList.objects.get(id=rec_id).podcasts.add(podcast_id)
+  return redirect('recs_detail', rec_id=rec_id)
+
 class RecommendationListUpdate(UpdateView):
   model = RecommendationList
   fields = ['name', 'description']
@@ -60,7 +70,7 @@ class PodcastList(ListView):
 class PodcastCreate(CreateView):
   model = Podcast
   fields = ['title', 'description', 'category', 'link']
-  success_url = '/about/'
+  success_url = '/podcasts/'
 
   def form_valid(self, form):
     form.instance.user = self.request.user

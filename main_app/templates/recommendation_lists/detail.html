@@ -13,15 +13,15 @@
   
 <section>
   <div class="list-content">
-    <h1 class="list-title">{{recommendationlist.name}}</h1>
-    <p>{{recommendationlist.description}}</p>
-    <a href="{% url 'recs_update' recommendationlist.id %}" class="btn secondary">Edit</a> 
-    <a href="{% url 'recs_delete' recommendationlist.id %}" class="btn danger">Delete</a>
+    <h1 class="list-title">{{recommendation_list.name}}</h1>
+    <p>{{recommendation_list.description}}</p>
+    <a href="{% url 'recs_update' recommendation_list.id %}" class="btn secondary">Edit</a> 
+    <a href="{% url 'recs_delete' recommendation_list.id %}" class="btn danger">Delete</a>
   </div>
   <div class="items-content">
     <h1 class="items-title">Podcasts</h1>
-    {% if recommendationlist.podcasts.count %}
-      {% for podcast in recommendationlist.podcasts %}
+    {% if recommendation_list.podcasts.count %}
+      {% for podcast in recommendation_list.podcasts.all %}
         <h3>
           <a href="{% url 'podcasts_detail' podcast.id %}">
             {{podcast.title}}
@@ -29,14 +29,14 @@
         </h3>
       {% endfor %}
     {% else %}
-      <h3 class="no-items-message">{{recommendationlist.name}} does not have any podcasts</h3>
+      <h3 class="no-items-message">{{recommendation_list.name}} does not have any podcasts</h3>
     {% endif %}
     <h3>Unassigned Podcasts</h3>
     {% if podcasts.count %}
       {% for podcast in podcasts.all %}
         <div class="podcast-container">
           <h4>{{podcast.title}}</h4>
-          <form action="{% url 'assoc_podcast' podcast.id %}" method="post">
+          <form action="{% url 'assoc_podcast' recommendation_list.id podcast.id %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn submit">Assign Podcast</button>
           </form>
