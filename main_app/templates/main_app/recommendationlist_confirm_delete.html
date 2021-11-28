@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/recommendation-list-delete.css' %}"
+/>
+{% endblock %}
+
 {% block content %}
 
 <div class="page-header">
-  <h1>Delete Recommendation List</h1>
+  <h2 class="form-title">Delete Recommendation List</h2>
+  <h3>{{object.name}}</h3>
 </div>
-<h2>Are you sure you want to delete {{ object.name }}?</h2>
+<p>Are you sure you want to delete {{ object.name }}?</p>
 
 <form action="" method="post">
   {% csrf_token %}
-  <a href="{% url 'recs_detail' recommendationlist.id %}" class="btn secondary">
+  <a href="{% url 'recs_detail' recommendationlist.id %}" class="btn cancel">
     Cancel
   </a>
   <button type="submit" class="btn danger">
