@@ -1,13 +1,29 @@
+.page-header {
+  width: 80%;
+  margin-bottom: 16px;
+}
+
+.form-title {
+  margin-bottom: 0;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-items: center;
+  width: 80%;
 }
 
 table {
-  padding: 0 40px;
   width: 100%;
-  border-spacing: 0 20px;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
 }
 
 th {
@@ -16,10 +32,11 @@ th {
   font-weight: normal;
   vertical-align: top;
   font-size: var(--font-reg);
+  margin-bottom: 16px;
 }
 
 td {
-  max-width: 60%;
+  max-width: 100%;
 }
 
 td > * {
@@ -33,7 +50,40 @@ td > textarea {
   font-family: inherit;
 }
 
-.btn {
+tr {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .btn {
   align-self: flex-end;
   margin-right: 40px;
+} */
+
+tbody > tr:first-child > th {
+  display: none;
+}
+
+tbody > tr:nth-child(2) > th > label {
+  visibility: hidden;
+}
+
+tbody > tr:nth-child(2) > th > label:after {
+  content: "Description";
+  visibility: visible;
+  display: block;
+  font-size: var(--font-xl)
+}
+
+#id_name {
+  border: none;
+  border-bottom: gray solid 2px;
+  font-size: var(--font-xxl)
+}
+
+#id_description {
+  resize: none;
+  font-size: var(--font-xl);
+  padding: 16px;
+  height: 8.5em;
 }

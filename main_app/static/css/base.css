@@ -151,13 +151,14 @@ nav li {
 .submit {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: var(--font-xl);
   color: white;
   border-color: var(--logo-color);
   background-color: var(--logo-color-op);
   height: 64px;
   border-radius: 32px;
-  width: 100%;
+  width: 80%;
   margin-top: 64px !important;
 }
 

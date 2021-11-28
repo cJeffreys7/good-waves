@@ -61,12 +61,6 @@ td > textarea {
   font-family: inherit;
 }
 
-.btn {
-  display: flex;
-  align-items: center;
-  width: 80%;
-}
-
 .helptext {
   display: none;
 }
