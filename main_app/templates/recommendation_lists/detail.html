@@ -62,7 +62,9 @@
       <form class="item-form" action="{% url 'podcasts_create' %}" method="post">
         {% csrf_token %}
         {{podcast_form.as_p}}
-        <button type="submit" class="btn submit">Create Podcast</button>
+        <div>
+          <button type="submit" class="btn submit">Create Podcast</button>
+        </div>
       </form>
     {% endif %}
   </div>

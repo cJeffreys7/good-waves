@@ -109,6 +109,15 @@ a {
   margin-bottom: 24px;
 }
 
+.item-form > div {
+  display: flex;
+  justify-content: center;
+}
+
+.item-form > div > .submit {
+  width: 80%;
+}
+
 #id_title {
   border: none;
   border-bottom: gray solid 2px;
