@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-#### To start using GoodWaves, open the app [here]()
+#### To start using GoodWaves, open the app [here](https://good-waves.herokuapp.com/)!
 
 <img src="main_app/static/images/GWAppSignUp.png">
 
