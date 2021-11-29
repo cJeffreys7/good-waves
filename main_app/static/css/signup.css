@@ -36,7 +36,7 @@ h1 {
 }
 
 table {
-  padding: 32px 40px 0;
+  padding: 0 40px 32px;
   width: 100%;
   border-spacing: 0 20px;
   border: var(--nav-bg) solid 2px;
@@ -51,7 +51,12 @@ th {
 
 td {
   max-width: 60%;
-  padding-bottom: 32px;
+  border-bottom: black solid 2px;
+  padding-top: 32px;
+}
+
+tbody > tr:nth-child(3) > td {
+  border-bottom: var(--logo-color) solid 2px;
 }
 
 td > * {
@@ -71,13 +76,8 @@ td > textarea {
 
 input {
   border: none;
-  border-bottom: black solid 2px;
   padding-bottom: 6px;
-  font-size: var(--font-xl);
-}
-
-#id_username {
-  border-bottom: var(--logo-color) solid 2px;
+  font-size: var(--font-l);
 }
 
 label {
