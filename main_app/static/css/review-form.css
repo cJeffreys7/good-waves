@@ -36,14 +36,6 @@ tbody > tr:nth-child(2) > th {
   font-size: 5rem;
 }
 
-.fill-star {
-  color: var(--star-fill);
-}
-
-.empty-star {
-  color: lightgray;
-}
-
 .cancel {
   display: flex;
   justify-content: center;

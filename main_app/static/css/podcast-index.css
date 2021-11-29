@@ -23,18 +23,3 @@ p {
   font-weight: 500;
   line-height: 150%;
 }
-
-.avg-rating {
-  display: flex;
-  justify-content: space-between;
-  width: 75%;
-  font-size: var(--font-xxl);
-}
-
-.fill-star, .avg-rating {
-  color: var(--star-fill);
-}
-
-.empty-star {
-  color: lightgray;
-}

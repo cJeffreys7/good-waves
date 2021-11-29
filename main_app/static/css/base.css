@@ -202,6 +202,21 @@ nav li {
   margin-left: 20px;
 }
 
+.avg-rating, .review-rating {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  font-size: var(--font-xxl);
+}
+
+.fill-star, .avg-rating {
+  color: var(--star-fill);
+}
+
+.empty-star {
+  color: lightgray;
+}
+
 @media only screen and (min-width: 300px) {
   header {
     position: sticky;

@@ -29,21 +29,6 @@ p {
   font-weight: 500;
 }
 
-.avg-rating, .review-rating {
-  display: flex;
-  justify-content: space-between;
-  width: 75%;
-  font-size: var(--font-xxl);
-}
-
-.fill-star, .avg-rating {
-  color: var(--star-fill);
-}
-
-.empty-star {
-  color: lightgray;
-}
-
 h3 {
   font-size: var(--font-xl);
   color: var(--text-lite-color);
