@@ -17,14 +17,15 @@
   border-radius: 50%;
   height: 64px;
   width: 64px;
-  background-color: lightgray;
+  background-color: var(--logo-color);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .user-name {
-  font-size: var(--font-xl)
+  font-size: var(--font-xl);
+  color: white;
 }
 
 a {
