@@ -143,3 +143,7 @@ input, select {
   color: var(--text-lite-color);
   width: 100%;
 }
+
+.avg-rating {
+  font-size: var(--font-xl);
+}
