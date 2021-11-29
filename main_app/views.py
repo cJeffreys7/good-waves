@@ -9,7 +9,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
 from main_app.models import RecommendationList, Podcast, Review
-from .forms import CustomRegForm, ReviewForm
+from .forms import CustomRegForm, ReviewForm, PodcastForm
 
 def about(request):
   return render(request, 'about.html')
@@ -49,8 +49,8 @@ class RecommendationListDetail(DetailView):
 def recs_detail(request, rec_id):
   recommendation_list = RecommendationList.objects.get(id=rec_id)
   podcasts_not_in_list = Podcast.objects.filter(user=request.user).exclude(id__in = recommendation_list.podcasts.all().values_list('id'))
-  #filter(user=request.user)
-  return render(request, 'recommendation_lists/detail.html', {'recommendation_list': recommendation_list, 'podcasts': podcasts_not_in_list})
+  podcast_form = PodcastForm()
+  return render(request, 'recommendation_lists/detail.html', {'recommendation_list': recommendation_list, 'podcasts': podcasts_not_in_list, 'podcast_form': podcast_form})
 
 def assoc_podcast(request, rec_id, podcast_id):
   RecommendationList.objects.get(id=rec_id).podcasts.add(podcast_id)

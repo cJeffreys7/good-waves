@@ -51,11 +51,6 @@ tr {
   flex-direction: column;
 }
 
-/* .btn {
-  align-self: flex-end;
-  margin-right: 40px;
-} */
-
 tbody > tr:first-child > th {
   display: none;
 }

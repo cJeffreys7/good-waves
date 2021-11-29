@@ -56,6 +56,16 @@
       {% endif %}
     {% endif %}
   </div>
+  <div class="item-form-container">
+    {% if user == recommendation_list.user %}
+      <h1 class="items-title">New Podcast</h1>
+      <form class="item-form" action="{% url 'podcasts_create' %}" method="post">
+        {% csrf_token %}
+        {{podcast_form.as_p}}
+        <button type="submit" class="btn submit">Create Podcast</button>
+      </form>
+    {% endif %}
+  </div>
 </section>
 
 {% endblock %}

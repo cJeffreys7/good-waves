@@ -2,7 +2,17 @@ from django import forms
 from django.forms import ModelForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
-from .models import Review
+from .models import Podcast, Review
+
+class PodcastForm(ModelForm):
+
+  class Meta:
+    model = Podcast
+    fields = ['title', 'description', 'category', 'link']
+
+    widgets = {
+      'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Podcast Title'})
+    }
 
 class ReviewForm(ModelForm):
 
