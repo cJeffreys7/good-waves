@@ -19,6 +19,7 @@
 
 <form action="" method="post">
   {% csrf_token %}
+  <input type="hidden" name="podcast_id" value="{{review.podcast_id}}">
   <a href="{% url 'podcasts_detail' review.podcast_id %}" class="btn cancel">
     Cancel
   </a>

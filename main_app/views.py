@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
@@ -88,8 +89,6 @@ def podcasts_detail(request, podcast_id):
 
 @login_required
 def add_review(request, podcast_id):
-  print('Average Rating:')
-  print(request.POST['average_rating'])
   form = ReviewForm(request.POST)
   if form.is_valid():
     new_review = form.save(commit=False)
@@ -116,3 +115,16 @@ class ReviewUpdate(LoginRequiredMixin, UpdateView):
 class ReviewDelete(LoginRequiredMixin, DeleteView):
   model = Review
   success_url = '/podcasts/'
+
+  def delete(self, request, *args, **kwargs):
+    self.object = self.get_object()
+    podcast = Podcast.objects.get(id=request.POST['podcast_id'])
+    podcastReviewCount = len(Review.objects.filter(podcast__exact = podcast.id))
+    if podcastReviewCount == 1:
+      podcast.average_rating = 0
+    else:
+      podcast.average_rating = (podcast.average_rating * podcastReviewCount - self.object.rating) / (podcastReviewCount - 1)
+    success_url = self.get_success_url()
+    self.object.delete()
+    podcast.save()
+    return HttpResponseRedirect(success_url)
