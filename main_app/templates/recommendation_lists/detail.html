@@ -49,7 +49,7 @@
             <h4 class="podcast-title">{{podcast.title}}</h4>
             <form action="{% url 'assoc_podcast' recommendation_list.id podcast.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn submit">Add Podcast</button>
+              <button type="submit" class="btn submit">Add</button>
             </form>
           </div>
         {% endfor %}
