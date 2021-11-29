@@ -21,11 +21,11 @@
           <h4 class="card-category">{{podcast.get_category_display}}</h3>
           <p>{{podcast.description}}</p>
           <div class="avg-rating">
-            <div id="rating-1" class="rating-star"><i class="fas fa-star"></i></div>
-            <div id="rating-2" class="rating-star"><i class="fas fa-star"></i></div>
-            <div id="rating-3" class="rating-star"><i class="fas fa-star"></i></div>
-            <div id="rating-4" class="rating-star"><i class="fas fa-star"></i></div>
-            <div id="rating-5" class="rating-star"><i class="fas fa-star"></i></div>
+            <div id="rating-1" class="rating-star {% if podcast.average_rating > 0 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+            <div id="rating-2" class="rating-star {% if podcast.average_rating > 1 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+            <div id="rating-3" class="rating-star {% if podcast.average_rating > 2 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+            <div id="rating-4" class="rating-star {% if podcast.average_rating > 3 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+            <div id="rating-5" class="rating-star {% if podcast.average_rating > 4 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
           </div>
         </div>
       </a>

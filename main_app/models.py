@@ -36,6 +36,7 @@ class Podcast(models.Model):
     default=CATEGORIES[0][0]
     )
   link = models.CharField(max_length=250)
+  average_rating = models.FloatField()
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):

@@ -29,5 +29,12 @@ p {
   justify-content: space-between;
   width: 75%;
   font-size: var(--font-xxl);
+}
+
+.fill-star, .avg-rating {
   color: var(--star-fill);
+}
+
+.empty-star {
+  color: lightgray;
 }

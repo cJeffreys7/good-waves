@@ -88,12 +88,17 @@ def podcasts_detail(request, podcast_id):
 
 @login_required
 def add_review(request, podcast_id):
+  print('Average Rating:')
+  print(request.POST['average_rating'])
   form = ReviewForm(request.POST)
   if form.is_valid():
     new_review = form.save(commit=False)
     new_review.podcast_id = podcast_id
     new_review.user = request.user
     new_review.save()
+  podcast = Podcast.objects.get(id=podcast_id)
+  podcast.average_rating = request.POST['average_rating']
+  podcast.save()
   return redirect('podcasts_detail', podcast_id=podcast_id)
 
 class PodcastUpdate(LoginRequiredMixin, UpdateView):

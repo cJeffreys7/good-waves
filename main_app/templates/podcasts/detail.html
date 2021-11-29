@@ -37,13 +37,15 @@
       <form action="{% url 'add_review' podcast.id %}" method="post">
         {% csrf_token %}
         {{review_form.as_p}}
-        <button type="submit" class="btn submit">Add Review</button>
+        <input id="podcast-avg-rating" type="hidden" name="average_rating" data-avg-rating="{{podcast.average_rating}}">
+        <input id="podcast-num-ratings" type="hidden" name="num_ratings" data-num-ratings="{{podcast.review_set.all.count}}">
+        <button onclick="calcAvgStarRating()" type="submit" class="btn submit">Add Review</button>
       </form>
       <h1 class="items-title">User Reviews</h1>
       {% if podcast.review_set.all.count %}
         {% for review in podcast.review_set.all %}
-          <h3 class="reviewer-name">{{review.user.first_name}}</h3>
-          <div class="review-rating">
+          <h3 class="reviewer-name">{{review.user.username}}</h3>
+          <div class="review-rating" data-rating="{{review.rating}}">
             <div id="review-rating-1" class="fill-star"><i class="fas fa-star"></i></div>
             <div id="review-rating-2" class="{% if review.rating > 1 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
             <div id="review-rating-3" class="{% if review.rating > 2 %}fill-star {% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>

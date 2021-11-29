@@ -1,5 +1,8 @@
 const ratingStars = document.querySelectorAll(".rating-star")
 const starRating = document.querySelector("#id_rating")
+const ratings = document.querySelectorAll(".review-rating")
+const averageRating = document.querySelector("#podcast-avg-rating")
+const numRatings = document.querySelector("#podcast-num-ratings")
 
 ratingStars.forEach(star => {
   star.addEventListener("click", setStarFill)
@@ -19,6 +22,14 @@ function setStarFill(evt){
       star.style = "color: lightgray;"
     }
   })
+}
+
+function calcAvgStarRating(){
+  let newRating = parseInt(starRating.value)
+  let ratingsAmount = parseInt(numRatings.dataset.numRatings)
+  let ratingAverage = parseFloat(averageRating.dataset.avgRating)
+  let avgRating = (ratingAverage * ratingsAmount + newRating) / (ratingsAmount + 1)
+  averageRating.value = avgRating
 }
 
 init()
