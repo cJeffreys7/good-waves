@@ -11,9 +11,6 @@ from django.views.generic import ListView, DetailView
 from main_app.models import RecommendationList, Podcast, Review
 from .forms import CustomRegForm, ReviewForm, PodcastForm
 
-def about(request):
-  return render(request, 'about.html')
-
 class Home(LoginView):
   template_name = 'home.html'
 
@@ -31,10 +28,10 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
 
-class RecommendationListList(ListView):
+class RecommendationListList(LoginRequiredMixin, ListView):
   model = RecommendationList
 
-class RecommendationListCreate(CreateView):
+class RecommendationListCreate(LoginRequiredMixin, CreateView):
   model = RecommendationList
   fields = ['name', 'description']
   success_url = '/recs/'
@@ -43,35 +40,38 @@ class RecommendationListCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class RecommendationListDetail(DetailView):
+class RecommendationListDetail(LoginRequiredMixin, DetailView):
   model = RecommendationList
 
+@login_required
 def recs_detail(request, rec_id):
   recommendation_list = RecommendationList.objects.get(id=rec_id)
   podcasts_not_in_list = Podcast.objects.filter(user=request.user).exclude(id__in = recommendation_list.podcasts.all().values_list('id'))
   podcast_form = PodcastForm()
   return render(request, 'recommendation_lists/detail.html', {'recommendation_list': recommendation_list, 'podcasts': podcasts_not_in_list, 'podcast_form': podcast_form})
 
+@login_required
 def assoc_podcast(request, rec_id, podcast_id):
   RecommendationList.objects.get(id=rec_id).podcasts.add(podcast_id)
   return redirect('recs_detail', rec_id=rec_id)
 
+@login_required
 def unassoc_podcast(request, rec_id, podcast_id):
   RecommendationList.objects.get(id=rec_id).podcasts.remove(podcast_id)
   return redirect('recs_detail', rec_id=rec_id)
 
-class RecommendationListUpdate(UpdateView):
+class RecommendationListUpdate(LoginRequiredMixin, UpdateView):
   model = RecommendationList
   fields = ['name', 'description']
   
-class RecommendationListDelete(DeleteView):
+class RecommendationListDelete(LoginRequiredMixin, DeleteView):
   model = RecommendationList
   success_url = '/recs/'
 
-class PodcastList(ListView):
+class PodcastList(LoginRequiredMixin, ListView):
   model = Podcast
 
-class PodcastCreate(CreateView):
+class PodcastCreate(LoginRequiredMixin, CreateView):
   model = Podcast
   fields = ['title', 'description', 'category', 'link']
   success_url = '/podcasts/'
@@ -80,11 +80,13 @@ class PodcastCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
+@login_required
 def podcasts_detail(request, podcast_id):
   podcast = Podcast.objects.get(id=podcast_id)
   review_form = ReviewForm()
   return render(request, 'podcasts/detail.html', {'podcast': podcast, 'review_form': review_form})
 
+@login_required
 def add_review(request, podcast_id):
   form = ReviewForm(request.POST)
   if form.is_valid():
@@ -94,18 +96,18 @@ def add_review(request, podcast_id):
     new_review.save()
   return redirect('podcasts_detail', podcast_id=podcast_id)
 
-class PodcastUpdate(UpdateView):
+class PodcastUpdate(LoginRequiredMixin, UpdateView):
   model = Podcast
   fields = ['title', 'description', 'category', 'link']
 
-class PodcastDelete(DeleteView):
+class PodcastDelete(LoginRequiredMixin, DeleteView):
   model = Podcast
   success_url = '/podcasts/'
 
-class ReviewUpdate(UpdateView):
+class ReviewUpdate(LoginRequiredMixin, UpdateView):
   model = Review
   fields = ['rating', 'text']
 
-class ReviewDelete(DeleteView):
+class ReviewDelete(LoginRequiredMixin, DeleteView):
   model = Review
   success_url = '/podcasts/'
