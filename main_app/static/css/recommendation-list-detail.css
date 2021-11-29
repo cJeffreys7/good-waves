@@ -34,12 +34,20 @@ a {
   color: var(--logo-color);
   font-size: var(--font-l);
   width: 50%;
+  margin: 0;
 }
 
 .podcast-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.podcast-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .podcast-info {
