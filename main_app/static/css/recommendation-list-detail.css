@@ -146,4 +146,5 @@ input, select {
 
 .avg-rating {
   font-size: var(--font-xl);
+  justify-content: flex-start;
 }

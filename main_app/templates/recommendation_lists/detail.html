@@ -57,6 +57,13 @@
             <h4 class="podcast-title">{{podcast.title}}</h4>
             <form action="{% url 'assoc_podcast' recommendation_list.id podcast.id %}" method="post">
               {% csrf_token %}
+              <div class="avg-rating">
+                <div id="rating-1" class="rating-star {% if podcast.average_rating > 0 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+                <div id="rating-2" class="rating-star {% if podcast.average_rating > 1 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+                <div id="rating-3" class="rating-star {% if podcast.average_rating > 2 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+                <div id="rating-4" class="rating-star {% if podcast.average_rating > 3 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+                <div id="rating-5" class="rating-star {% if podcast.average_rating > 4 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
+              </div>
               <button type="submit" class="btn submit">Add</button>
             </form>
           </div>
