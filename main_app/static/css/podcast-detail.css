@@ -33,7 +33,7 @@ p {
   display: flex;
   justify-content: space-between;
   width: 75%;
-  font-size: 5rem;
+  font-size: var(--font-xxl);
 }
 
 .fill-star, .avg-rating {
