@@ -25,6 +25,11 @@
     {{ form.as_table }}
   </table>
   <button type="submit" class="btn submit">Update</button>
+  {% if object %}
+    <a href="{% url 'podcasts_detail' object.podcast.id %}" class="btn cancel">
+      Cancel
+    </a>
+  {% endif %}
 </form>
 
 {% endblock %}

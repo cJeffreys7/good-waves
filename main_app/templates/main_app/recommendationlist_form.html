@@ -20,6 +20,11 @@
     {{ form.as_table }}
   </table>
   <button type="submit" class="btn submit">{% if object %}Update{% else %}Submit{% endif %}</button>
+  {% if object %}
+    <a href="{% url 'recs_detail' object.id %}" class="btn cancel">
+      Cancel
+    </a>
+  {% endif %}
 </form>
 
 {% endblock %}

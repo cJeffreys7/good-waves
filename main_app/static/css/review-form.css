@@ -26,6 +26,7 @@ tbody > tr:nth-child(2) > th {
   color: var(--text-lite-color);
   padding: 12px;
   height: 8.5em;
+  width: 100%;
 }
 
 .review-rating {
@@ -41,4 +42,14 @@ tbody > tr:nth-child(2) > th {
 
 .empty-star {
   color: lightgray;
+}
+
+.cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  height: 64px;
+  border-radius: 32px;
+  width: 80%;
 }

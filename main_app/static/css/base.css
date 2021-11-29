@@ -156,6 +156,10 @@ nav li {
   background-color: var(--danger-op);
 }
 
+.cancel:hover {
+  background-color: var(--nav-bg);
+}
+
 .submit {
   display: flex;
   justify-content: center;
@@ -175,7 +179,7 @@ nav li {
 
 .cancel {
   border-color: var(--text-lite-color);
-  background-color: var(--nav-bg);
+  background-color: var(--text-lite-color);
 }
 
 .danger {

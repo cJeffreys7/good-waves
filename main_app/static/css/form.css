@@ -114,3 +114,13 @@ input, select {
   font-size: var(--font-xl);
   color: var(--text-lite-color);
 }
+
+.cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  height: 64px;
+  border-radius: 32px;
+  width: 80%;
+}
