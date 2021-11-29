@@ -65,6 +65,10 @@ a {
   margin: 0;
 }
 
+.item-form > p:nth-child(2) {
+  border-bottom: gray solid 2px;
+}
+
 .item-form > p:nth-child(2) > label {
   display: none;
 }
@@ -120,7 +124,6 @@ a {
 
 #id_title {
   border: none;
-  border-bottom: gray solid 2px;
   font-size: var(--font-xxl);
   color: var(--text-lite-color);
 }
