@@ -3,6 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}"/>
+<script defer src="{% static 'js/signup-functions.js'%}"></script>
 {% endblock %}
 
 {% block content %}
@@ -25,7 +26,7 @@
   <table>
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit</button>
+  <button type="submit" class="btn submit" onclick="checkForm(true)">Submit</button>
 </form>
 
 {% endblock %}

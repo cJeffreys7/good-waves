@@ -55,9 +55,9 @@ td {
   padding-top: 32px;
 }
 
-tbody > tr:nth-child(3) > td {
+/* tbody > tr:nth-child(3) > td {
   border-bottom: var(--logo-color) solid 2px;
-}
+} */
 
 td > * {
   width: 100%;
@@ -82,4 +82,14 @@ input {
 
 label {
   display: none;
+}
+
+span {
+  color: var(--danger)
+}
+
+button:disabled, button[disabled] {
+  border-color: var(--text-lite-color);
+  background-color: var(--text-lighter-color);
+  color: var(--text-lite-color)
 }
