@@ -17,6 +17,7 @@
     <div class="card">
       <a href="{% url 'podcasts_detail' podcast.id %}">
         <div class="card-content">
+          <img class="podcast-img" src="{{podcast.image}}" alt="">
           <h2 class="card-title">{{podcast.title}}</h2>
           <h4 class="card-category">{{podcast.get_category_display}}</h3>
           <p>{{podcast.description}}</p>

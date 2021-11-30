@@ -74,7 +74,7 @@ class PodcastList(LoginRequiredMixin, ListView):
 
 class PodcastCreate(LoginRequiredMixin, CreateView):
   model = Podcast
-  fields = ['title', 'description', 'category', 'link']
+  fields = ['title', 'link', 'description', 'category', 'image']
   success_url = '/podcasts/'
 
   def form_valid(self, form):
@@ -102,7 +102,7 @@ def add_review(request, podcast_id):
 
 class PodcastUpdate(LoginRequiredMixin, UpdateView):
   model = Podcast
-  fields = ['title', 'description', 'category', 'link']
+  fields = ['title', 'link',  'description', 'category', 'image']
 
 class PodcastDelete(LoginRequiredMixin, DeleteView):
   model = Podcast

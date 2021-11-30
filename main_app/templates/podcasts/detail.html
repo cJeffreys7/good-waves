@@ -15,8 +15,11 @@
   
 <section class="card">
   <div class="card-content">
-    <h1 class="card-title">{{podcast.title}}</h1>
-    <h4 class="card-category">{{podcast.get_category_display}}</h4>
+    <a href="{{podcast.link}}" target="_blank">
+      <img id="podcast-img" src="{{podcast.image}}" alt="">
+      <h1 class="card-title">{{podcast.title}}</h1>
+      <h4 class="card-category">{{podcast.get_category_display}}</h4>
+    </a>
     <p>{{podcast.description}}</p>
     {% if user == podcast.user %}
       <div class="podcast-actions">

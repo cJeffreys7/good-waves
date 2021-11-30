@@ -2,6 +2,14 @@
   width: 100%;
 }
 
+#podcast-img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
 .card-title {
   font-size: var(--font-xl);
   color: var(--logo-color);

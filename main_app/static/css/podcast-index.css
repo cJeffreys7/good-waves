@@ -7,6 +7,14 @@ a {
   text-decoration: none;
 }
 
+.card {
+  margin-bottom: 48px;
+}
+
+.podcast-img {
+  width: 80%;
+}
+
 .card-title {
   color: var(--logo-color);
 }

@@ -46,6 +46,11 @@
 
 #### Additional wireframes can be seen [here](https://trello.com/b/aictIgTF/goodwaves)
 
+## Attributions:
+
+* Icons from [FontAwesome](https://fontawesome.com/)
+* Link preview generation from [linkpreview](https://my.linkpreview.net/)
+
 ## Next Steps
 - [x] Mobile Login Screen
 - [x] Mobile User Sign Up
@@ -63,7 +68,7 @@
 - [x] Edit User Reviews View
 - [x] Delete User Reviews Confirmation View
 - [x] Associate/Unassociate Podcast with Recommendation List
-- [ ] Embedded link block to auto populate podcast info
+- [x] Embedded link block to auto populate podcast info
 - [ ] Mark Reviews as Helpful
 - [ ] User Profile View
 - [ ] Change User Profile Image

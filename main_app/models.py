@@ -29,14 +29,17 @@ CATEGORIES = (
 
 class Podcast(models.Model):
   title = models.CharField(max_length=100)
-  description = models.TextField(max_length=250)
+  description = models.TextField(max_length=500)
   category = models.CharField(
     max_length=1,
     choices=CATEGORIES,
     default=CATEGORIES[0][0]
     )
   link = models.CharField(max_length=250)
-  average_rating = models.FloatField()
+  average_rating = models.FloatField(
+    default=0
+  )
+  image = models.TextField(max_length=500)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):

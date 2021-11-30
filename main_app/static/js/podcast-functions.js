@@ -1,6 +1,8 @@
 const titleInput = document.querySelector("#id_title")
 const descriptionInput = document.querySelector("#id_description")
 const linkInput = document.querySelector("#id_link")
+const imageInput = document.querySelector("#id_image")
+const podcastImage = document.querySelector("#podcast-img")
 const expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi
 const websiteRegEx = new RegExp(expression)
 
@@ -28,7 +30,11 @@ function generateLinkPreview(){
           titleInput.value = data.title
         }
         if (!data.description.includes('Invalid') && data.description) {
-          descriptionInput.value = data.description
+          descriptionInput.value = data.description.substring(0, 500)
+        }
+        if (data.image) {
+          imageInput.value = data.image
+          podcastImage.setAttribute('src', data.image)
         }
       })
       .catch(err => {

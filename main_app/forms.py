@@ -8,7 +8,7 @@ class PodcastForm(ModelForm):
 
   class Meta:
     model = Podcast
-    fields = ['title', 'description', 'category', 'link']
+    fields = ['title', 'link', 'description', 'category', 'image']
 
     widgets = {
       'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Podcast Title'})
