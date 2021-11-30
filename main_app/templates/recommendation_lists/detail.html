@@ -29,7 +29,7 @@
         <div class="podcast-info">
           <h3>
             <a class="podcast-title" href="{% url 'podcasts_detail' podcast.id %}">
-              <img class="podcast-thumbnail" src="{{podcast.image}}" alt="">
+              <img class="podcast-thumbnail" src="{% if podcast.image %}{{podcast.image}}{% endif %}" alt="">
               {{podcast.title}}
               <div class="avg-rating">
                 <div id="rating-1" class="rating-star {% if podcast.average_rating > 0 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
