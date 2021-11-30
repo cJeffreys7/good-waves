@@ -21,7 +21,7 @@ function generateLinkPreview(){
     }
     isDelayed = true
     linkPreviewDelay = setTimeout(function(){
-      fetch(`http://api.linkpreview.net/?key=7c5dc8db90501ddb89b060074bcd94f3&q=${linkInput.value}`
+      fetch(`https://api.linkpreview.net/?key=7c5dc8db90501ddb89b060074bcd94f3&q=${linkInput.value}`
       )
       .then(response => response.json())
       .then(data => {
