@@ -1,36 +1,36 @@
 # GoodWaves
 
-### Hear what other people are listening to with podcast recommendations
+### Hear what other people are listening to and share your favorites with podcast recommendations!
 
 ## Getting Started
 
 #### To start using GoodWaves, open the app [here](https://good-waves.herokuapp.com/)!
 
-<img src="main_app/static/images/GWAppSignUp.png">
+<img src="main_app/static/images/GWSignUp.png">
 
 #### Once at GoodWaves, you can create a new account to begin viewing other user's recommendations.
 
-<img src="main_app/static/images/GWAppRecList.png">
+<img src="main_app/static/images/GWRecList.png">
 
 #### View other user curated recommendation lists to begin browsing podcasts.
 
-<img src="main_app/static/images/GWAppRecDetails.png">
+<img src="main_app/static/images/GWRecDetails.png">
 
 #### From there you can try out different podcasts.
 
-<img src="main_app/static/images/GWAppPodcastDetails.png">
+<img src="main_app/static/images/GWPodcastDetails.png">
 
 #### Checkout reviews on podcasts and add your own reviews as well.
 
-<img src="main_app/static/images/GWAppNewRec.png">
+<img src="main_app/static/images/GWNewRec.png">
 
 #### If you want to create your own podcast recommendations, you can begin creating your own recommendation lists and podcasts.
 
-<img src="main_app/static/images/GWAppNewPodcast.png">
+<img src="main_app/static/images/GWNewPodcast.png">
 
 ### Add a link to auto generate podcast content.
 
-<img src="main_app/static/images/GWAppEditPodcast.png">
+<img src="main_app/static/images/GWEditRec.png">
 
 #### Then add podcasts to your lists for others to see!
 
@@ -45,7 +45,7 @@
 ## Wireframe
 
 <img src="main_app/static/images/GWMobilePodcastDetails.png">
-<img src="main_app/static/images/GoodWavesERD.png">
+<img src="main_app/static/images/GWERD.png">
 
 #### Additional wireframes can be seen [here](https://trello.com/b/aictIgTF/goodwaves)
 
