@@ -91,5 +91,7 @@ span {
 button:disabled, button[disabled] {
   border-color: var(--text-lite-color);
   background-color: var(--text-lighter-color);
-  color: var(--text-lite-color)
+  color: var(--text-lite-color);
+  opacity: 0.6;
+  pointer-events: none;
 }
