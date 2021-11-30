@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   --logo-color: rgba(21, 116, 222, 1);
   --logo-color-op: rgba(21, 116, 222, .5);
-  --nav-bg: rgba(167, 170, 189, .7);
+  --nav-bg: rgba(0, 145, 156, .7);
   --nav-bg-ff: rgba(167, 170, 189, .7);
   --borders: rgb(66, 70, 86) solid 2px;
   --text-color: rgb(17, 20, 17);
