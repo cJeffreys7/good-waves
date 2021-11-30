@@ -170,3 +170,8 @@ input, select {
   font-size: var(--font-xl);
   justify-content: flex-start;
 }
+
+.sub-title {
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
+}

@@ -53,7 +53,7 @@
     {% endif %}
     {% if user == recommendation_list.user %}
       {% if podcasts.count %}
-        <h3>Unassigned Podcasts</h3>
+        <h3 class="sub-title">Unassigned Podcasts</h3>
         {% for podcast in podcasts.all %}
           <div class="podcast-container">
             <div class="podcast-details">

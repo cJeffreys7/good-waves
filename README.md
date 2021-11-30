@@ -23,9 +23,12 @@
 #### Checkout reviews on podcasts and add your own reviews as well.
 
 <img src="main_app/static/images/GWAppNewRec.png">
-<img src="main_app/static/images/GWAppNewPodcast.png">
 
 #### If you want to create your own podcast recommendations, you can begin creating your own recommendation lists and podcasts.
+
+<img src="main_app/static/images/GWAppNewPodcast.png">
+
+### Add a link to auto generate podcast content.
 
 <img src="main_app/static/images/GWAppEditPodcast.png">
 
