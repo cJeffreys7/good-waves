@@ -159,7 +159,7 @@ nav li {
 }
 
 .cancel:hover {
-  background-color: var(--nav-bg);
+  background-color: var(--nav-bg-ff);
 }
 
 .submit {

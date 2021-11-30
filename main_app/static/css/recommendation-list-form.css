@@ -1,0 +1,106 @@
+.page-header {
+  width: 80%;
+  margin-bottom: 16px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#podcast-img {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  padding: 6px 20px 0 0;
+  font-weight: normal;
+  vertical-align: top;
+  font-size: var(--font-reg);
+  margin-bottom: 16px;
+}
+
+td {
+  max-width: 100%;
+}
+
+td > * {
+  width: 100%;
+  padding: 2px 4px;
+  font-size: var(--font-l);
+}
+
+td > textarea {
+  height: calc(4 * var(--font-l) + 8px);
+  font-family: inherit;
+}
+
+tr {
+  display: flex;
+  flex-direction: column;
+}
+
+tbody > tr:first-child > th {
+  display: none;
+}
+
+tbody > tr:first-child > td {
+  border-bottom: gray solid 2px;
+}
+
+tbody > tr:nth-child(2) > th > label {
+  visibility: hidden;
+}
+
+tbody > tr:nth-child(2) > th > label:after {
+  content: "Description";
+  visibility: visible;
+  display: block;
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
+}
+
+#id_name, #id_title {
+  border: none;
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
+}
+
+#id_description {
+  resize: none;
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
+  padding: 12px;
+  height: 8.5em;
+}
+
+input, select {
+  min-height: 48px;
+  font-size: var(--font-xl);
+  color: var(--text-lite-color);
+}
+
+.cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  height: 64px;
+  border-radius: 32px;
+  width: 80%;
+}
