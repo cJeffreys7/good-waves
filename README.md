@@ -50,6 +50,7 @@
 
 * Icons from [FontAwesome](https://fontawesome.com/)
 * Link preview generation from [linkpreview](https://my.linkpreview.net/)
+* RegExp for websites from [foufos](https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url)
 
 ## Next Steps
 - [x] Mobile Login Screen
