@@ -17,7 +17,7 @@
     <div class="card">
       <a href="{% url 'podcasts_detail' podcast.id %}">
         <div class="card-content">
-          <img class="podcast-img" src="{% if podcast.image %}{{podcast.image}}{% else %}{% static 'images/podcast-icon.svg' %}{% endif %}" alt="">
+          <img class="podcast-img {% if not podcast.image %}active-icon{% endif %}" src="{% if podcast.image %}{{podcast.image}}{% else %}{% static 'images/podcast-icon.svg' %}{% endif %}" alt="">
           <h2 class="card-title">{{podcast.title}}</h2>
           <h4 class="card-category">{{podcast.get_category_display}}</h3>
           <p>{{podcast.description}}</p>
