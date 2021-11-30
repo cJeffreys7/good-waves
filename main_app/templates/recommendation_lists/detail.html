@@ -29,7 +29,7 @@
         <div class="podcast-info">
           <h3>
             <a class="podcast-title" href="{% url 'podcasts_detail' podcast.id %}">
-              <img class="podcast-thumbnail" src="{% if podcast.image %}{{podcast.image}}{% endif %}" alt="">
+              <{% if podcast.image %}img{% else %}embed{% endif %} class="podcast-thumbnail {% if not podcast.image %}active-icon{% endif %}" src="{% if podcast.image %}{{podcast.image}}{% else %}{% static 'images/podcast-icon.svg' %}{% endif %}" alt="">
               {{podcast.title}}
               <div class="avg-rating">
                 <div id="rating-1" class="rating-star {% if podcast.average_rating > 0 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>
@@ -58,7 +58,7 @@
           <div class="podcast-container">
             <div class="podcast-details">
               <a href="{% url 'podcasts_detail' podcast.id %}">
-                <img class="podcast-thumbnail" src="{{podcast.image}}" alt="">
+                <{% if podcast.image %}img{% else %}embed{% endif %} class="podcast-thumbnail {% if not podcast.image %}active-icon{% endif %}" src="{% if podcast.image %}{{podcast.image}}{% else %}{% static 'images/podcast-icon.svg' %}{% endif %}" alt="">
                 <h4 class="podcast-title">{{podcast.title}}</h4>
                 <div class="avg-rating">
                   <div id="rating-1" class="rating-star {% if podcast.average_rating > 0 %}fill-star{% else %}empty-star{% endif %}"><i class="fas fa-star"></i></div>

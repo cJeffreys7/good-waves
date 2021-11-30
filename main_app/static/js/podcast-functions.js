@@ -32,10 +32,8 @@ function generateLinkPreview(){
         if (!data.description.includes('Invalid') && data.description) {
           descriptionInput.value = data.description.substring(0, 500)
         }
-        if (data.image) {
-          imageInput.value = data.image
-          podcastImage.setAttribute('src', data.image)
-        }
+        imageInput.value = data.image
+        podcastImage.setAttribute('src', data.image)
       })
       .catch(err => {
         console.log('Error:', err)

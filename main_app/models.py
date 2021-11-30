@@ -39,7 +39,11 @@ class Podcast(models.Model):
   average_rating = models.FloatField(
     default=0
   )
-  image = models.TextField(max_length=500)
+  image = models.TextField(
+    max_length=500,
+    blank=True,
+    null=True
+    )
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):

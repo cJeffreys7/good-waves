@@ -58,7 +58,8 @@ a {
 }
 
 .podcast-thumbnail {
-  width: 50%;
+  max-width: 128px;
+  max-height: 128px;
 }
 
 .submit {
