@@ -54,6 +54,7 @@ header {
   width: 100%;
   background: var(--nav-bg-ff);
   border-bottom: var(--borders);
+  z-index: 1;
 }
 
 .logo-img {
@@ -291,21 +292,22 @@ nav li {
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  main {
+/*! Style desktop view  */
+/* @media only screen and (min-width: 1024px) { */
+  /* main {
     min-height: calc(100vh - 55px);
-  }
+  } */
   
-  header {
+  /* header {
     margin: 20px 20px 0 20px;
     width: calc(100vw - 40px);
     max-width: 1920px;
     top: 20px;
     background-color: transparent;
     border-bottom: none;
-  }
+  } */
 
-  nav,
+  /* nav,
   .header-logo-container {
     margin: 0;
     background: var(--nav-bg-ff);
@@ -329,14 +331,14 @@ nav li {
 
   .logo-img {
     width: 100%;
-  }
+  } */
   
 
-  nav {
+  /* nav {
     margin-left: auto;
-  }
+  } */
 
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  /* @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     header {
       -webkit-backdrop-filter: none;
       backdrop-filter: none;
@@ -349,4 +351,4 @@ nav li {
       backdrop-filter: blur(3px);
     }
   }
-}
+} */

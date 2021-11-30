@@ -78,8 +78,8 @@
       {% endif %}
     {% endif %}
   </div>
-  <div class="item-form-container">
-    {% if user == recommendation_list.user %}
+  {% if user == recommendation_list.user %}
+    <div class="item-form-container">
       <h1 class="items-title">New Podcast</h1>
       <img id="podcast-img" src="" alt="">
       <form class="item-form" action="{% url 'podcasts_create' %}" method="post">
@@ -89,8 +89,8 @@
           <button type="submit" class="btn submit">Create Podcast</button>
         </div>
       </form>
-    {% endif %}
-  </div>
+    </div>
+  {% endif %}
 </section>
 
 {% endblock %}
