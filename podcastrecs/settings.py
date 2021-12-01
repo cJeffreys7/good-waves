@@ -126,7 +126,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-LOGIN_URL = 'home'
+LOGIN_URL = 'recs_index'
 LOGIN_REDIRECT_URL = 'recs_index'
 LOGOUT_REDIRECT_URL = 'home'
 
