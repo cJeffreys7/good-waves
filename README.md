@@ -10,7 +10,7 @@
 
 #### Once at GoodWaves, you can create a new account to begin viewing other user's recommendations.
 
-<img src="main_app/static/images/GWRecList.png">
+<img src="main_app/static/images/GoodWavesRecList.png">
 
 #### View other user curated recommendation lists to begin browsing podcasts.
 
